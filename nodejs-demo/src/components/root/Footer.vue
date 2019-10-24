@@ -50,7 +50,7 @@
     font-size: 14px;
     color: #ABABAB;
     width: 100%;
-    margin-top:10px;
+    margin-top:15px;
   }
   .footer>.warp{
     max-width: 1200px;

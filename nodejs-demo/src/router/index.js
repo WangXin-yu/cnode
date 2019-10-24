@@ -13,6 +13,14 @@ const routes = [
     component: () => import('../views/About.vue')
   },
   {
+    path: '/root',
+    name: 'root',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import('../components/root/Root.vue')
+  },
+  {
     path:"/",
     component:Root,
     children:[
@@ -35,6 +43,17 @@ const routes = [
 
     ]
   },
+  {
+    path: "/log",
+    component: Root,
+    children:[
+      {
+        path: "",
+        name: "log",
+        component: () => import("../components/Log/Log.vue"),
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({

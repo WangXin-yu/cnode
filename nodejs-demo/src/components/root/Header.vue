@@ -3,7 +3,7 @@
     <div class="header">
       <div class="warp">
         <div class="left">
-          <img class="logo" src="https://static2.cnodejs.org/public/images/cnodejs_light.svg" alt="">
+          <img @click="homePage" class="logo" src="https://static2.cnodejs.org/public/images/cnodejs_light.svg" alt="">
           <div  class="search">
             <i class="icon_search iconfont icon-sousuo"></i>
             <input type="text">
@@ -11,12 +11,12 @@
 
         </div>
         <div class="right">
-          <div>首页</div>
+          <div @click="homePage">首页</div>
           <div>新手入门</div>
           <div>API</div>
           <div>关于</div>
           <div>注册</div>
-          <div>登录</div>
+          <div @click="signUp">登录</div>
         </div>
       </div>
     </div>
@@ -32,7 +32,14 @@
     data() {
       return {}
     },
-    methods: {},
+    methods: {
+      signUp(){
+        this.$router.push("/Log")
+      },
+      homePage(){
+        this.$router.push("/")
+      }
+    },
     mounted() {
 
     },
@@ -64,6 +71,9 @@
     width:120px;
     height: 28px;
     margin-top:-7px;
+  }
+  .logo:hover{
+    cursor:pointer
   }
   .search{
     width: 233px;
@@ -103,5 +113,8 @@
     justify-content: space-between;
     color: #ccc;
     font-size: 13px;
+  }
+  .right>div{
+    cursor: pointer;
   }
 </style>
